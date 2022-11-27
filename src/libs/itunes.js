@@ -1,8 +1,8 @@
-import axios from 'axios';
-
 export async function searchTracks(params) {
-    const response = await axios.get('https://itunes.apple.com/search', { params });
-    if (!response || !response.data)
+    const url = new URL('https://itunes.apple.com/search');
+    url.search = new URLSearchParams(params).toString();
+    const response = await fetch(url);
+    if (!response || !response.ok)
         return [];
-    return response.data.results; // .filter(x => x.wrapperType == "track");
+    return (await response.json()).results; // .filter(x => x.wrapperType == "track");
 }
