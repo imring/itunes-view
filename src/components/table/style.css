@@ -1,0 +1,32 @@
+.image {
+    width: 100px;
+    height: 100px;
+}
+
+.image img {
+    display: block;
+    border: 2px solid gray;
+}
+
+.table {
+    padding: 10px;
+    background: none !important;
+    box-shadow: none !important;
+}
+
+.expand {
+    font-size: 64px;
+    font-weight: bold;
+
+    border: none;
+    background: none;
+    color: inherit;
+    
+    width: 50px;
+    height: 50px;
+}
+
+.title {
+    margin: 0;
+    line-height: 0;
+}
