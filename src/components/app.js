@@ -6,11 +6,12 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 // Code-splitting is automated for `routes` directory
 import Home from '../routes/home';
+import baseroute from '../../baseroute';
 
 const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-  },
+	palette: {
+		mode: 'dark',
+	},
 });
 
 const App = () => (
@@ -18,7 +19,7 @@ const App = () => (
 		<CssBaseline />
 		<div id="app">
 			<Router>
-				<Home path="/" />
+				<Home path={`${baseroute}/`} />
 			</Router>
 		</div>
 	</ThemeProvider>
