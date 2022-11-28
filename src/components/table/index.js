@@ -47,6 +47,10 @@ function getTime(ms) {
 	return `${min}:${secstr}`
 }
 
+function timeout(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 class Row extends Component {
 	constructor(props) {
 		super(props);
@@ -76,7 +80,7 @@ class Row extends Component {
 				<StyledTableCell colSpan={2}>
 					<Collapse in={collapse} timeout="auto" unmountOnExit>
 						<Box sx={{ margin: 2, marginLeft: 0 }}>
-							<h2 class={style.title}>{info.artistName} - {info.trackName}</h2> <br />
+							<b class={style.title}>{info.artistName} - {info.trackName}</b> <br />
 							<b>Collection: </b>{info.collectionCensoredName} <br />
 							<b>Track count: </b>{info.trackCount} <br />
 							<b>Price: </b>{info.collectionPrice} {info.currency} <br />
@@ -111,6 +115,17 @@ class ItunesTable extends Component {
 	}
 
 	async update() {
+		if (!this.props.artist) {
+			this.onCollapse(-1);
+			this.setState({ data: [] });
+			return;
+		}
+
+		const last = this.props.artist;
+		await timeout(250);
+		if (this.props.artist !== last)
+			return;
+
 		this.onCollapse(-1);
 		const response = await searchTracks({ term: this.props.artist, entity: "song", attribute: "artistTerm" });
 		this.setState({ data: response });
