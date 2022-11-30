@@ -4,5 +4,5 @@ export async function searchTracks(params) {
     const response = await fetch(url);
     if (!response || !response.ok)
         return [];
-    return (await response.json()).results; // .filter(x => x.wrapperType == "track");
+    return (await response.json()).results;
 }

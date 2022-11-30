@@ -23,9 +23,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
-	// '&:nth-of-type(8n+1), &:nth-of-type(8n+2), &:nth-of-type(8n+3), &:nth-of-type(8n+4)': {
-	// 	backgroundColor: theme.palette.action.hover,
-	// },
 	'&': {
 		paddingBottom: 0,
 		paddingTop: 0,

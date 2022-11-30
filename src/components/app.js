@@ -6,7 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 
 // Code-splitting is automated for `routes` directory
 import Home from '../routes/home';
-import baseroute from '../../baseroute';
+import baseroute from '../baseroute';
 
 const darkTheme = createTheme({
 	palette: {

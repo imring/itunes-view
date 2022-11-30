@@ -19,4 +19,11 @@ npm run serve
 npm run test
 ```
 
+## Environmental Variables
+
+``` bash
+PROCESSROUTE # project path, if it's not on a main domain (see src/baseroute.js)
+             # usage (e.g. bash): PROCESSROUTE='itunes-view' npm run dev
+```
+
 For detailed explanation on how things work, checkout the [CLI Readme](https://github.com/developit/preact-cli/blob/master/README.md).
